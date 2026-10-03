@@ -1,0 +1,18 @@
+{
+  "name": "pi-command-frequency",
+  "version": "0.1.0",
+  "description": "Rank Pi slash-command autocomplete by local usage frequency while preserving argument and file completions.",
+  "type": "module",
+  "license": "MIT",
+  "author": "zlflly",
+  "keywords": ["pi-package", "pi-extension", "autocomplete", "slash-commands", "frequency"],
+  "repository": { "type": "git", "url": "git+https://github.com/zlflly/pi-command-frequency.git" },
+  "homepage": "https://github.com/zlflly/pi-command-frequency#readme",
+  "bugs": { "url": "https://github.com/zlflly/pi-command-frequency/issues" },
+  "engines": { "node": ">=22.19.0" },
+  "files": ["index.js", "lib/", "README.md", "README.zh-CN.md", "LICENSE"],
+  "pi": { "extensions": ["./index.js"] },
+  "peerDependencies": { "@earendil-works/pi-coding-agent": "*" },
+  "devDependencies": { "@earendil-works/pi-coding-agent": "1.0.0" },
+  "scripts": { "test": "node --test tests/*.test.js", "check": "node --check index.js && node --check lib/editor.js && node --check lib/ranking.js && node --check lib/store.js", "prepublishOnly": "npm run check && npm test" }
+}
